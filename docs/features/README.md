@@ -4,8 +4,8 @@
 |---|---------|--------|---------------|---------|
 | 01 | Time Manager | Implemented | [Technical](01-time-manager.md) | [Summary](summaries/01-time-manager-summary.md) |
 | 02 | Player Movement | Implemented | [Technical](02-player-movement.md) | [Summary](summaries/02-player-movement-summary.md) |
-| 03 | Arena | Not started | — | — |
-| 04 | Enemy Controller | Not started | — | — |
+| 03 | Arena | Implemented | [Technical](03-arena.md) | [Summary](summaries/03-arena-summary.md) |
+| 04 | Enemy Controller | Implemented | [Technical](04-enemy-controller.md) | [Summary](summaries/04-enemy-controller-summary.md) |
 | 05 | Enemy Shooter + Bullet | Implemented | [Technical](05-enemy-shooter-bullet.md) | [Summary](summaries/05-enemy-shooter-bullet-summary.md) |
 | 06 | Player Damage | Not started | — | — |
 | 07 | Enemy Spawner | Not started | — | — |
