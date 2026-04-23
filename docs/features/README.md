@@ -2,7 +2,7 @@
 
 | # | Feature | Status | Technical Doc | Summary |
 |---|---------|--------|---------------|---------|
-| 01 | Time Manager | Not started | — | — |
+| 01 | Time Manager | Implemented | [Technical](01-time-manager.md) | [Summary](summaries/01-time-manager-summary.md) |
 | 02 | Player Movement | Not started | — | — |
 | 03 | Arena | Not started | — | — |
 | 04 | Enemy Controller | Not started | — | — |
