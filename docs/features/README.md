@@ -7,7 +7,7 @@
 | 03 | Arena | Implemented | [Technical](03-arena.md) | [Summary](summaries/03-arena-summary.md) |
 | 04 | Enemy Controller | Implemented | [Technical](04-enemy-controller.md) | [Summary](summaries/04-enemy-controller-summary.md) |
 | 05 | Enemy Shooter + Bullet | Implemented | [Technical](05-enemy-shooter-bullet.md) | [Summary](summaries/05-enemy-shooter-bullet-summary.md) |
-| 06 | Player Damage | Not started | — | — |
+| 06 | Player Damage | Implemented | [Technical](06-player-damage.md) | [Summary](summaries/06-player-damage-summary.md) |
 | 07 | Enemy Spawner | Not started | — | — |
 | 08 | BCI Targeting | Not started | — | — |
 | 09 | Enemy Death FX | Not started | — | — |
