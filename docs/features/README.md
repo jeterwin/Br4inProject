@@ -3,10 +3,10 @@
 | # | Feature | Status | Technical Doc | Summary |
 |---|---------|--------|---------------|---------|
 | 01 | Time Manager | Implemented | [Technical](01-time-manager.md) | [Summary](summaries/01-time-manager-summary.md) |
-| 02 | Player Movement | Not started | — | — |
+| 02 | Player Movement | Implemented | [Technical](02-player-movement.md) | [Summary](summaries/02-player-movement-summary.md) |
 | 03 | Arena | Not started | — | — |
 | 04 | Enemy Controller | Not started | — | — |
-| 05 | Enemy Shooter + Bullet | Not started | — | — |
+| 05 | Enemy Shooter + Bullet | Implemented | [Technical](05-enemy-shooter-bullet.md) | [Summary](summaries/05-enemy-shooter-bullet-summary.md) |
 | 06 | Player Damage | Not started | — | — |
 | 07 | Enemy Spawner | Not started | — | — |
 | 08 | BCI Targeting | Not started | — | — |
