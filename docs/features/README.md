@@ -8,7 +8,7 @@
 | 04 | Enemy Controller | Implemented | [Technical](04-enemy-controller.md) | [Summary](summaries/04-enemy-controller-summary.md) |
 | 05 | Enemy Shooter + Bullet | Implemented | [Technical](05-enemy-shooter-bullet.md) | [Summary](summaries/05-enemy-shooter-bullet-summary.md) |
 | 06 | Player Damage | Implemented | [Technical](06-player-damage.md) | [Summary](summaries/06-player-damage-summary.md) |
-| 07 | Enemy Spawner | Not started | — | — |
+| 07 | Enemy Spawner | Implemented | [Technical](07-enemy-spawner.md) | [Summary](summaries/07-enemy-spawner-summary.md) |
 | 08 | BCI Targeting | Not started | — | — |
 | 09 | Enemy Death FX | Not started | — | — |
 | 10 | Game Manager | Not started | — | — |
