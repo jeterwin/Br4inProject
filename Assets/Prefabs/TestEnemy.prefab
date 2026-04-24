@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6043180226955953926}
   - component: {fileID: 7293466786262558496}
   - component: {fileID: 7938416590658631392}
+  - component: {fileID: 4627258892924111428}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Enemy
@@ -146,3 +147,15 @@ MonoBehaviour:
   _moveSpeed: 3.5
   _acceleration: 8
   _stoppingDistance: 8
+--- !u!114 &4627258892924111428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3122856233164673022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e24ce871d6c46d297cb93b1523436f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
