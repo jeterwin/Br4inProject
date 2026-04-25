@@ -5,14 +5,18 @@ using UnityEngine;
 public class BCITargetingSystem : MonoBehaviour
 {
     [SerializeField] private int _requiredDetections = 4;
-    [SerializeField] private float _windowDuration = 5f;
-    [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private float _bulletSpeed = 20f;
-    [SerializeField] private Transform _fireOrigin;
     [SerializeField] private bool _debugMode = true;
+    [SerializeField] private float _windowDuration = 5f;
+    [SerializeField] private float _bulletSpeed = 20f;
+    [SerializeField] private float _fireCooldown = 1.0f;
+
+    [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private Transform _fireOrigin;
+    [SerializeField] private ParticleSystem shotSFX;
 
     private Dictionary<int, List<float>> _detectionTimestamps = new();
     private Dictionary<int, GameObject> _classToEnemy = new();
+    private float _nextFireTime;
 
     public IReadOnlyDictionary<int, GameObject> ClassToEnemy => _classToEnemy;
 
@@ -30,6 +34,8 @@ public class BCITargetingSystem : MonoBehaviour
 
     public void OnClassSelected(uint classId)
     {
+        if (Time.time < _nextFireTime) return;
+
         int id = (int)classId;
 
         if (!_classToEnemy.TryGetValue(id, out GameObject enemy) || enemy == null)
@@ -43,14 +49,28 @@ public class BCITargetingSystem : MonoBehaviour
 
         if (timestamps.Count >= _requiredDetections)
         {
-            Debug.Log($"[BCI] Firing at enemy classId={id}");
+            _nextFireTime = Time.time + _fireCooldown;
             FireAtEnemy(enemy);
-            timestamps.Clear();
+            ResetAllDetections();
+        }
+    }
+
+    private void ResetAllDetections()
+    {
+        foreach (var list in _detectionTimestamps.Values)
+        {
+            list.Clear();
         }
     }
 
     private void FireAtEnemy(GameObject enemy)
     {
+        if (shotSFX != null) shotSFX.Play();
+
+        // Find the gun controller and trigger recoil
+        var gunSway = _fireOrigin.GetComponentInParent<GunMovementController>();
+        if (gunSway != null) gunSway.Shoot();
+
         Vector3 direction = (enemy.transform.position - _fireOrigin.position).normalized;
         Vector3 spawnPos = _fireOrigin.position + direction * 1.5f;
         GameObject bullet = Instantiate(_bulletPrefab, spawnPos, Quaternion.identity);
