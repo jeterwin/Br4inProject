@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+        transform.Translate(_speed * Time.deltaTime * Vector3.forward);
 
         _age += Time.deltaTime;
         if (_age >= _lifetime)

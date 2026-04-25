@@ -39,17 +39,12 @@ public class EnemySpawner : MonoBehaviour
 
             if (_targetingSystem != null)
                 _targetingSystem.RegisterEnemy(classId, enemy);
-
-            var deathHandler = enemy.GetComponent<EnemyDeathHandler>();
-            if (deathHandler != null)
-                deathHandler.OnDeath += OnEnemyDied;
         }
     }
 
     private void OnEnemyDied(EnemyDeathHandler enemy)
     {
         int classId = enemy.GetComponent<EnemyController>().ClassId;
-        enemy.OnDeath -= OnEnemyDied;
         _aliveCount--;
 
         if (_targetingSystem != null)
@@ -71,5 +66,15 @@ public class EnemySpawner : MonoBehaviour
             2 => new Vector3(EdgeExtent, _spawnYOffset, t),
             _ => new Vector3(-EdgeExtent, _spawnYOffset, t)
         };
+    }
+
+    private void OnEnable()
+    {
+        EnemyDeathHandler.OnDeath += OnEnemyDied;
+    }
+
+    private void OnDisable()
+    {
+        EnemyDeathHandler.OnDeath -= OnEnemyDied;
     }
 }
