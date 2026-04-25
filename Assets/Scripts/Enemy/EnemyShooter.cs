@@ -28,7 +28,8 @@ public class EnemyShooter : MonoBehaviour
     private void Fire()
     {
         Vector3 direction = (_playerTransform.position - transform.position).normalized;
-        GameObject bulletObj = Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
+        Vector3 spawnPos = transform.position + direction * 1.5f;
+        GameObject bulletObj = Instantiate(_bulletPrefab, spawnPos, Quaternion.identity);
         bulletObj.GetComponent<Bullet>().Initialize(direction, _bulletSpeed);
     }
 }
