@@ -24,8 +24,6 @@ public class PlayerMovementController : MonoBehaviour
     private void Update()
     {
         if (GameManager.IsPaused) return;
-
-        HandleMouseLook();
         HandleMovement();
     }
 
