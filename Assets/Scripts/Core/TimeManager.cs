@@ -3,7 +3,9 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance { get; private set; }
-    public bool IsTimeFrozen => Time.timeScale == 0f;
+    public bool IsTimeFrozen => Time.timeScale == frozenTimeScale;
+
+    [SerializeField] private float frozenTimeScale = 0.1f;
 
     private bool _wasMoving;
 
@@ -22,7 +24,7 @@ public class TimeManager : MonoBehaviour
         if (isMoving == _wasMoving) return;
 
         _wasMoving = isMoving;
-        Time.timeScale = isMoving ? 1f : 0f;
+        Time.timeScale = isMoving ? 1f : frozenTimeScale;
         Debug.Log(isMoving ? "Time resumed" : "Time frozen");
     }
 }

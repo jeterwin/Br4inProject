@@ -3,6 +3,10 @@ using UnityEngine;
 public class EnemyShooter : MonoBehaviour
 {
     [SerializeField] private GameObject _bulletPrefab;
+
+    [SerializeField] private Transform _firePoint;
+    [SerializeField] private ParticleSystem _fireEffect;
+
     [SerializeField] private float _fireInterval = 2f;
     [SerializeField] private float _bulletSpeed = 8f;
 
@@ -27,9 +31,11 @@ public class EnemyShooter : MonoBehaviour
 
     private void Fire()
     {
-        Vector3 direction = (_playerTransform.position - transform.position).normalized;
-        Vector3 spawnPos = transform.position + direction * 1.5f;
-        GameObject bulletObj = Instantiate(_bulletPrefab, spawnPos, Quaternion.identity);
+        _fireEffect.Play();
+
+        Vector3 direction = (_playerTransform.position - _firePoint.position).normalized;
+
+        GameObject bulletObj = Instantiate(_bulletPrefab, _firePoint.position, Quaternion.identity);
         bulletObj.GetComponent<Bullet>().Initialize(direction, _bulletSpeed);
     }
 }
