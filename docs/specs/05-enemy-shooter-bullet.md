@@ -19,7 +19,7 @@ Already implemented. Enemies fire yellow bullet spheres toward the player at con
 **EnemyShooter.cs:**
 - Finds player via `FindWithTag("Player")` in Start
 - Fires at intervals using `Time.deltaTime` timer
-- Instantiates bullet prefab, calls `Initialize` with direction to player
+- Instantiates bullet prefab **1.5 units forward** from the enemy (prevents self-collision), calls `Initialize` with direction to player
 
 ## Inspector Fields
 

@@ -76,7 +76,7 @@ BCIDebugSimulator (MonoBehaviour, separate GameObject)
 - If remaining count >= `_requiredDetections`: call `FireAtEnemy`, clear that enemy's timestamps
 
 **FireAtEnemy(GameObject enemy):**
-- Instantiate bullet at `_fireOrigin.position`
+- Instantiate bullet at `_fireOrigin.position + direction * 1.5f` (offset prevents self-collision with player)
 - Direction = `(enemy.transform.position - _fireOrigin.position).normalized`
 - Call `bullet.GetComponent<Bullet>().Initialize(direction, _bulletSpeed)`
 - No muzzle FX for MVP — just the bullet instantiation

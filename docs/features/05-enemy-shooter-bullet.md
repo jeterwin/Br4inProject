@@ -33,7 +33,7 @@ Enemies fire yellow bullet spheres toward the player at configurable intervals. 
 1. `Start()` caches the player transform via `FindWithTag("Player")`.
 2. `Update()` increments a timer by `Time.deltaTime` (auto-pauses during freeze).
 3. When timer exceeds `_fireInterval`, calls `Fire()` and resets.
-4. `Fire()` calculates direction to player, instantiates the bullet prefab at the enemy's position, and calls `Bullet.Initialize()` with direction and speed.
+4. `Fire()` calculates direction to player, instantiates the bullet prefab **1.5 units forward** from the enemy (to prevent self-collision with the enemy's own collider), and calls `Bullet.Initialize()` with direction and speed.
 
 ### Bullet
 1. `Initialize(direction, speed)` sets the bullet's rotation to face the direction and stores the speed.
@@ -74,5 +74,6 @@ Enemies fire yellow bullet spheres toward the player at configurable intervals. 
 ## Known Limitations
 
 - Bullets fire from the enemy's center (no muzzle offset) for MVP.
+- Bullets spawn 1.5 units forward from the enemy to avoid self-collision — at very close range this could miss the player.
 - No bullet spread or accuracy variation.
 - Bullets pass through other enemies and obstacles (trigger collider, no physics collision with environment).

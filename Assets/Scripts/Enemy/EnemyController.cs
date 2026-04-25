@@ -24,6 +24,9 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        if (!_agent.isOnNavMesh)
+            return;
+
         _agent.destination = _playerTransform.position;
 
         if (_agent.remainingDistance <= _agent.stoppingDistance)
