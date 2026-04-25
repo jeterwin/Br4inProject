@@ -10,6 +10,6 @@
 | 06 | Player Damage | Implemented | [Technical](06-player-damage.md) | [Summary](summaries/06-player-damage-summary.md) |
 | 07 | Enemy Spawner | Implemented | [Technical](07-enemy-spawner.md) | [Summary](summaries/07-enemy-spawner-summary.md) |
 | 08 | BCI Targeting | Implemented | [Technical](08-bci-targeting.md) | [Summary](summaries/08-bci-targeting-summary.md) |
-| 09 | Enemy Death FX | Not started | — | — |
+| 09 | Enemy Death FX | Implemented | [Technical](09-enemy-death-fx.md) | [Summary](summaries/09-enemy-death-fx-summary.md) |
 | 10 | Game Manager | Not started | — | — |
 | 11 | HUD / UI | Not started | — | — |

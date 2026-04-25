@@ -1390,7 +1390,7 @@ MonoBehaviour:
   _requiredDetections: 2
   _windowDuration: 5
   _bulletPrefab: {fileID: 2186980600876119973, guid: 00e5c4ff6401046edb415a9e6765d808, type: 3}
-  _bulletSpeed: 5
+  _bulletSpeed: 100
   _fireOrigin: {fileID: 963194228}
   _debugMode: 1
 --- !u!4 &1487105443
