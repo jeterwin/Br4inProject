@@ -39,6 +39,9 @@ public class EnemySpawner : MonoBehaviour
 
             if (_targetingSystem != null)
                 _targetingSystem.RegisterEnemy(classId, enemy);
+
+            if (BCIPipelineOrchestrator.Instance != null)
+                BCIPipelineOrchestrator.Instance.RegisterFlashTarget(classId, enemy);
         }
     }
 
@@ -49,6 +52,9 @@ public class EnemySpawner : MonoBehaviour
 
         if (_targetingSystem != null)
             _targetingSystem.UnregisterEnemy(classId);
+
+        if (BCIPipelineOrchestrator.Instance != null)
+            BCIPipelineOrchestrator.Instance.UnregisterFlashTarget(classId);
 
         if (_aliveCount <= 0)
             OnAllEnemiesDefeated?.Invoke();

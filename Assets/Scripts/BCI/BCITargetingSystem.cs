@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BCITargetingSystem : MonoBehaviour
 {
+    public static BCITargetingSystem Instance { get; private set; }
+
     [SerializeField] private int _requiredDetections = 4;
     [SerializeField] private bool _debugMode = true;
     [SerializeField] private float _windowDuration = 5f;
@@ -17,6 +19,16 @@ public class BCITargetingSystem : MonoBehaviour
     private Dictionary<int, List<float>> _detectionTimestamps = new();
     private Dictionary<int, GameObject> _classToEnemy = new();
     private float _nextFireTime;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     public IReadOnlyDictionary<int, GameObject> ClassToEnemy => _classToEnemy;
 
